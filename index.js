@@ -5,7 +5,6 @@ var cityElems = document.getElementsByClassName("città");
 for (let elem of cityElems ) {
   //definisco una funzione arraow come proprieta del DOM
   elem.onclick = () => display(elem.innerHTML);
-  elem.onmouseover = () => {(elem.style.backgroundColor = "red"); (elem.style.color = "white"); (elem.style.width = "100px")};
 }
 
 // Funzione collegata ai bottoni
@@ -22,8 +21,7 @@ function display(city) {
       var dataObject = JSON.parse(request.response);
       console.log(request.response);
       document.getElementById("risposta").innerHTML =
-        "A " + city + " ci sono " + dataObject.main.temp + " gradi" + "<br/>" +
-        "e una pressione di " + dataObject.main.pressure;
+        "A " + city + " ci sono " + dataObject.main.temp + " gradi";
     } else {
       document.getElementById("risposta").innerText = "Errore";
     }
