@@ -23,7 +23,7 @@ function display(city) {
       console.log(request.response);
       document.getElementById("risposta").innerHTML =
         "A " + city + " ci sono " + dataObject.main.temp + " gradi" + "<br/>" +
-        "e una pressione di " + dataObject.main.pressure;
+        "e una pressione di " + dataObject.main.pressure + " (HPA)";
     } else {
       document.getElementById("risposta").innerText = "Errore";
     }
