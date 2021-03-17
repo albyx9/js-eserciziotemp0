@@ -19,7 +19,6 @@ function display(city) {
     // funzione definita arrow
     if (request.status === 200) {
       var dataObject = JSON.parse(request.response);
-      console.log(request.response);
       document.getElementById("risposta").innerHTML =
         "A " + city + " ci sono " + dataObject.main.temp + " gradi";
     } else {
