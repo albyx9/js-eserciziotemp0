@@ -22,8 +22,7 @@ function display(city) {
       var dataObject = JSON.parse(request.response);
       console.log(request.response);
       document.getElementById("risposta").innerHTML =
-        "A " + city + " ci sono " + dataObject.main.temp + " gradi" + "<br/>" +
-        "e una pressione di " + dataObject.main.pressure;
+        "A " + city + " ci sono " + dataObject.main.temp + " gradi";
     } else {
       document.getElementById("risposta").innerText = "Errore";
     }
