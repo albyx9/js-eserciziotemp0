@@ -2,28 +2,25 @@
 import "./style.css"; 
 var cityElems = document.getElementsByClassName("città");
 var cityElems_add;
-var el ;
 var aggiunta = document.getElementById("aggiungi");
-aggiunta.onclick = (cityElems_add) => {
+var node = document.createElement("LI");
+var btn = document.createElement("BUTTON");
+var lista = document.getElementById("lista");
+aggiunta.onclick = () => {
     cityElems_add = document.getElementById("ct").value;
-    var node = document.createElement("LI");
-    var btn = document.createElement("BUTTON");
     var textnode = document.createTextNode(cityElems_add);
     btn.setAttribute("type", "button");
     btn.setAttribute("class", "città");
     btn.appendChild(textnode);
     node.appendChild(btn);
-    document.getElementById("proprio_qui").appendChild(node);
-    el = node;
+    lista.insertBefore(node, lista.childNodes[0]);
+    cityElems = document.getElementsByClassName("città");
 };
-
-
 for (let elem of cityElems ) {
   
   //definisco una funzione arraow come proprieta del DOM
   elem.onclick = () => display(elem.innerHTML);
 }
-
 // Funzione collegata ai bottoni
 // "window" necessario in StackBlitz, può essere
 // omesso altrimenti
