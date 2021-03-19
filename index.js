@@ -3,18 +3,17 @@ import "./style.css";
 var cityElems = document.getElementsByClassName("città");
 var cityElems_add;
 var aggiunta = document.getElementById("aggiungi");
-var node = document.createElement("LI");
-var btn = document.createElement("BUTTON");
-var lista = document.getElementById("lista");
 aggiunta.onclick = () => {
     cityElems_add = document.getElementById("ct").value;
+    var node = document.createElement("LI");
+    var btn = document.createElement("BUTTON");
+    var lista = document.getElementById("lista");
     var textnode = document.createTextNode(cityElems_add);
     btn.setAttribute("type", "button");
     btn.setAttribute("class", "città");
     btn.appendChild(textnode);
     node.appendChild(btn);
     lista.insertBefore(node, lista.childNodes[0]);
-    cityElems = document.getElementsByClassName("città");
 };
 for (let elem of cityElems ) {
   
