@@ -3,6 +3,10 @@ import "./style.css";
 
 var cityElems = document.getElementsByClassName("città");
 var cityElems_add = document.getElementById("ct").value;
+var aggiunta = document.getElementById("aggiungi");
+aggiunta.onclick = () => {
+  
+};
 for (let elem of cityElems ) {
   //definisco una funzione arraow come proprieta del DOM
   elem.onclick = () => display(elem.innerHTML);
