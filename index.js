@@ -1,13 +1,25 @@
 // Import stylesheets
 import "./style.css"; 
-
 var cityElems = document.getElementsByClassName("città");
-var cityElems_add = document.getElementById("ct").value;
+var cityElems_add;
+var el ;
 var aggiunta = document.getElementById("aggiungi");
-aggiunta.onclick = () => {
-  
+aggiunta.onclick = (cityElems_add) => {
+    cityElems_add = document.getElementById("ct").value;
+    var node = document.createElement("LI");
+    var btn = document.createElement("BUTTON");
+    var textnode = document.createTextNode(cityElems_add);
+    btn.setAttribute("type", "button");
+    btn.setAttribute("class", "città");
+    btn.appendChild(textnode);
+    node.appendChild(btn);
+    document.getElementById("proprio_qui").appendChild(node);
+    el = node;
 };
+
+
 for (let elem of cityElems ) {
+  
   //definisco una funzione arraow come proprieta del DOM
   elem.onclick = () => display(elem.innerHTML);
 }
