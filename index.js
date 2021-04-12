@@ -30,8 +30,6 @@ function display_avg (){
     request.send();
   }
 }
-// 6048b7faacmsh8840d0109f92483p15a7a2jsn51f760b208fc
-
 var cityElems = document.getElementsByClassName("città");
 for (let elem of cityElems ) {
   //definisco una funzione arraow come proprieta del DOM
