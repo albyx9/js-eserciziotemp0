@@ -12,8 +12,8 @@ bottone_media.onclick = display_avg;
 function display_avg (){
   var media = 0;
   for(let cit of cityElems){
-    var data = cit.innerHTML;
-    var request = new XMLHttpRequest();
+    let data = cit.innerHTML;
+    let request = new XMLHttpRequest();
     request.onload = function(){
       if(request.status == 200){
         var dataObject = JSON.parse(request.response);
