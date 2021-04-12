@@ -24,7 +24,7 @@ bottone_media.onclick = () => {
       if(richiesta.status === 200){
         var dataObject = JSON.parse(richiesta.response);
         var singola_temperatura = dataObject.main.temp;
-        console.log("singola" + singola_temperatura);
+        console.log("singola " + singola_temperatura);
         return singola_temperatura;
       }else{
         document.write("<h3>errore calcolo media singolo elemento</h3>");
@@ -75,3 +75,4 @@ function display(city) {
   // Applico il metodo send (al termine chiamerà il callback "onload")
   request.send();
 };
+
