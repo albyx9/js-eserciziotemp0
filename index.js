@@ -3,12 +3,8 @@ import "./style.css";
 
 var cityElems = document.getElementsByClassName("città");
 var bottone_media = document.getElementById("media");
-var vettore_elementi = [];
-var req = [];
 
 for (let elem of cityElems ) {
-  vettore_elementi.push(elem.innerHTML);
-  console.log(elem.innerHTML);
   elem.onclick = () => display(elem.innerHTML);
 }
 bottone_media.onclick = display_avg;
@@ -22,13 +18,13 @@ function display_avg (){
       if(request.status == 200){
         var dataObject = JSON.parse(request.response);
         var temp = dataObject.main.temp;
-        media += dataObject.main.temp / cityElems.length;
+        media += temp / cityElems.length;
         document.getElementById("risposta_media").innerHTML = 
         "la media è di " + media + "gradi";
       }else{
         document.getElementById("risposta_media").innerHTML = "errore";
       }
-    }
+    };
     request.open("GET", "https://api.openweathermap.org/data/2.5/weather?APPID=d0fda39104b3c7c45fe031a5392964c1&units=metric&q=" +
     data,true);
     request.send();
