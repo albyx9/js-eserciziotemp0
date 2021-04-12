@@ -11,17 +11,18 @@ for (let elem of cityElems ) {
   console.log(elem.innerHTML);
   elem.onclick = () => display(elem.innerHTML);
 }
-bottone_media.onclick = display_avg(vettore_elementi);
+bottone_media.onclick = display_avg;
 ///////////////////////////////////
-function display_avg (v){
-  var media = 0
-  for(let data of v){
+function display_avg (){
+  var media = 0;
+  for(let cit of cityElems){
+    var data = cit.innerHTML;
     var request = new XMLHttpRequest();
     request.onload = function(){
       if(request.status == 200){
         var dataObject = JSON.parse(request.response);
         var temp = dataObject.main.temp;
-        media += dataObject.main.temp / v.length;
+        media += dataObject.main.temp / cityElems.length;
         document.getElementById("risposta_media").innerHTML = 
         "la media è di " + media + "gradi";
       }else{
