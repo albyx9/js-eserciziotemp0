@@ -1,10 +1,14 @@
 
 import "./style.css"; 
-
+//assegno a variabile la collezione di html con stessa classe
 var cityElems = document.getElementsByClassName("città");
-var bottone_media = document.getElementById("media");
+//assegno a variabile il bottone html con stessa classe
+var bottone_media = document.getElementById("media"); 
 
+//ciclo tutti gli elementi di htmlCollection
 for (let elem of cityElems ) {
+  //gestisco gli eventi legati a htmlCollection
+  //associo al click una funzione di callback  
   elem.onclick = () => display(elem.innerHTML);
 }
 bottone_media.onclick = display_avg;
